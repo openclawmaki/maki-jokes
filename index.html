@@ -56,7 +56,7 @@
     </div>
 
     <script>
-        let timeLeft = 15;
+        let timeLeft = 10;
         let timerInterval;
         const JOKE_API = 'https://v2.jokeapi.dev/joke/Any?lang=es&safe-mode';
 
@@ -88,11 +88,11 @@
 
         function resetTimer() {
             clearInterval(timerInterval);
-            timeLeft = 15;
+            timeLeft = 10;
             const progressElement = document.getElementById('progress');
             
             let start = null;
-            const duration = 15000;
+            const duration = 10000;
 
             function step(timestamp) {
                 if (!start) start = timestamp;
