@@ -126,7 +126,7 @@
                 localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
                 
                 setupEl.innerText = data.setup;
-                deliveryEl.innerText = data.delivery;
+                deliveryEl.innerText = data.delivery || ''; // Si no hay delivery, queda vacío
                 
             } catch (error) {
                 setupEl.innerText = "Error al cargar chistes locales.";

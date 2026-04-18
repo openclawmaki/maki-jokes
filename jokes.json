@@ -28,5 +28,15 @@
   { "id": 27, "setup": "Mi software no tiene bugs...", "delivery": "Solo funciones que se comportan de forma inesperada." },
   { "id": 28, "setup": "¿Por qué el programador se siente solo?", "delivery": "Porque no tiene a nadie a quien hacerle un 'merge'." },
   { "id": 29, "setup": "¿Qué le dice un servidor a otro?", "delivery": "¿Quieres que te haga un PING o prefieres que te mande un paquete?" },
-  { "id": 30, "setup": "Internet Explorer entra en un bar...", "delivery": "Y pide una cerveza que el barman ya le sirvió hace tres años." }
+  { "id": 30, "setup": "Internet Explorer entra en un bar...", "delivery": "Y pide una cerveza que el barman ya le sirvió hace tres años." },
+  { "id": 31, "setup": "Programador (n.):", "delivery": "Alguien que resuelve un problema que no sabías que tenías de una manera que no entiendes." },
+  { "id": 32, "setup": "¡Ayer un programador me dijo que su código funcionaba a la primera!", "delivery": "Casi me lo creo... si no fuera porque estábamos en el día de los Santos Inocentes." },
+  { "id": 33, "setup": "No hay nada más permanente que una solución temporal que funciona.", "delivery": "" },
+  { "id": 34, "setup": "Un buen programador mira a ambos lados antes de cruzar una calle de sentido único.", "delivery": "Por si acaso hay un bug en el tráfico." },
+  { "id": 35, "setup": "En mi casa se hace lo que yo digo...", "delivery": "Después de leer la documentación, claro." },
+  { "id": 36, "setup": "Un programador no es alguien que sabe escribir código...", "delivery": "Es alguien que sabe qué copiar y pegar de Stack Overflow." },
+  { "id": 37, "setup": "Mi lenguaje de programación favorito es 'Copy-Paste'.", "delivery": "" },
+  { "id": 38, "setup": "¡Socorro! ¡Un programador me está persiguiendo!", "delivery": "¡Rápido, métete en una zona sin Wi-Fi!" },
+  { "id": 39, "setup": "Dios tardó 7 días en crear el mundo porque no tenía que hacerlo compatible con versiones anteriores.", "delivery": "" },
+  { "id": 40, "setup": "Si el código funciona, ¡no lo toques!", "delivery": "Aunque no sepas por qué funciona." }
 ]
