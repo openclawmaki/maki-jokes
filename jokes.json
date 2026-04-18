@@ -75,7 +75,7 @@
     "id": 13,
     "setup": "¿Has escuchado sobre la manera orientada a objetos de ser adinerado?",
     "delivery": "Herencia.",
-    "source": "https://x.com/iamdevloper/status/458607185011294208"
+    "source": "https://www.reddit.com/r/dadjokes/comments/19az1te/whats_the_objectoriented_way_to_become_wealthy/"
   },
   {
     "id": 14,
@@ -94,5 +94,29 @@
     "setup": "Cuando un programador crea código por primera vez, solo él y Dios saben cómo funciona.",
     "delivery": "Unos meses después, solo Dios lo sabe.",
     "source": "https://es.quora.com/Es-normal-olvidar-c%C3%B3mo-funciona-tu-propio-c%C3%B3digo"
+  },
+  {
+    "id": 17,
+    "setup": "¿Por qué los programadores odian la naturaleza?",
+    "delivery": "Porque tiene demasiados bugs.",
+    "source": "https://www.reddit.com/r/ProgrammerHumor/comments/6d6yas/programming_jokes_compilation/"
+  },
+  {
+    "id": 18,
+    "setup": "¿Por qué los programadores no tienen novia?",
+    "delivery": "Porque les da miedo el compromiso (commit).",
+    "source": "https://raw.githubusercontent.com/15Dkatz/official_joke_api/master/jokes/index.json"
+  },
+  {
+    "id": 19,
+    "setup": "¿Cuál es el mejor lugar para esconder un cadáver?",
+    "delivery": "La segunda página de resultados de Google.",
+    "source": "https://twitter.com/nixcraft/status/1025345759182282752"
+  },
+  {
+    "id": 20,
+    "setup": "Un informático le dice a otro: ¿Qué tal va tu vida?",
+    "delivery": "Pues como un Intel Celeron: a veces me cuelgo y nadie sabe por qué.",
+    "source": "https://www.genbeta.com/desarrollo/cual-es-el-mejor-chiste-de-informaticosprogramadores-que-conoces-la-pregunta-de-la-semana"
   }
 ]
