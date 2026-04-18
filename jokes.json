@@ -1,42 +1,98 @@
 [
-  { "id": 1, "setup": "¿Qué es un terapeuta?", "delivery": "1024 Gigapeutas." },
-  { "id": 2, "setup": "¿Por qué los programadores confunden Halloween con Navidad?", "delivery": "Porque Oct 31 == Dec 25." },
-  { "id": 3, "setup": "Un programador se va a dormir y pone dos vasos en la mesita.", "delivery": "Uno lleno por si tiene sed, y uno vacío por si no tiene." },
-  { "id": 4, "setup": "¿Qué le dice un .GIF a un .JPEG?", "delivery": "Anímate viejo." },
-  { "id": 5, "setup": "¿Cuál es la diferencia entre un programador y un político?", "delivery": "Al programador le pagan por los bugs que corrige." },
-  { "id": 6, "setup": "¿Por qué C consigue todas las chicas y Java no?", "delivery": "Porque C no las trata como objetos." },
-  { "id": 7, "setup": "Solo hay 10 tipos de personas en el mundo:", "delivery": "Las que entienden binario y las que no." },
-  { "id": 8, "setup": "He intentado aprender SQL...", "delivery": "Pero no he podido hacer un JOIN con la realidad." },
-  { "id": 9, "setup": "¿Cómo llamas a un programador que no tiene bugs?", "delivery": "Un mentiroso." },
-  { "id": 10, "setup": "Mi mujer me dijo: 'Ve al súper y trae una barra de pan. Si hay huevos, trae doce'.", "delivery": "Volví con doce barras de pan." },
-  { "id": 11, "setup": "¿Qué es el hardware?", "delivery": "La parte que puedes golpear cuando falla el software." },
-  { "id": 12, "setup": "¿Cuál es el lenguaje de programación favorito de los piratas?", "delivery": "El RRRRRRR." },
-  { "id": 13, "setup": "Para entender lo que es la recursividad...", "delivery": "Primero debes entender lo que es la recursividad." },
-  { "id": 14, "setup": "Un SQL entra en un bar, se acerca a dos mesas y pregunta:", "delivery": "¿Puedo unirme a vosotras? (Can I join you?)" },
-  { "id": 15, "setup": "¿Por qué los programadores odian la naturaleza?", "delivery": "Porque tiene demasiados bugs." },
-  { "id": 16, "setup": "Un optimista dice: 'El vaso está medio lleno'. Un pesimista dice: 'El vaso está medio vacío'.", "delivery": "Un programador dice: 'El vaso es el doble de grande de lo necesario'." },
-  { "id": 17, "setup": "¿Qué hace un programador cuando tiene hambre?", "delivery": "Se va a la cocina y hace un 'sudo make sandwich'." },
-  { "id": 18, "setup": "¿Por qué el programador se quedó en la ducha para siempre?", "delivery": "Porque las instrucciones del champú decían: 'Lavar, aclarar, repetir'." },
-  { "id": 19, "setup": "¿Cómo se dice 'pobre' en Java?", "delivery": "NullPointerException." },
-  { "id": 20, "setup": "Frontend es como el maquillaje...", "delivery": "Sirve para ocultar que el Backend está hecho un desastre." },
-  { "id": 21, "setup": "¿Qué hace un desarrollador cuando se queda sin café?", "delivery": "¡Entra en modo pánico y empieza a comentar el código!" },
-  { "id": 22, "setup": "Un programador en la playa...", "delivery": "¡No se quema, se renderiza!" },
-  { "id": 23, "setup": "¿Qué es una variable?", "delivery": "Un lugar donde guardas algo y luego rezas para que siga ahí." },
-  { "id": 24, "setup": "¿Por qué los programadores no les gusta el sol?", "delivery": "Porque no pueden ver los errores en la pantalla." },
-  { "id": 25, "setup": "Debugging es como ser el detective en una película de crímenes...", "delivery": "Donde tú también eres el asesino." },
-  { "id": 26, "setup": "¿Qué es un programador?", "delivery": "Una máquina que convierte cafeína en código." },
-  { "id": 27, "setup": "Mi software no tiene bugs...", "delivery": "Solo funciones que se comportan de forma inesperada." },
-  { "id": 28, "setup": "¿Por qué el programador se siente solo?", "delivery": "Porque no tiene a nadie a quien hacerle un 'merge'." },
-  { "id": 29, "setup": "¿Qué le dice un servidor a otro?", "delivery": "¿Quieres que te haga un PING o prefieres que te mande un paquete?" },
-  { "id": 30, "setup": "Internet Explorer entra en un bar...", "delivery": "Y pide una cerveza que el barman ya le sirvió hace tres años." },
-  { "id": 31, "setup": "Programador (n.):", "delivery": "Alguien que resuelve un problema que no sabías que tenías de una manera que no entiendes." },
-  { "id": 32, "setup": "¡Ayer un programador me dijo que su código funcionaba a la primera!", "delivery": "Casi me lo creo... si no fuera porque estábamos en el día de los Santos Inocentes." },
-  { "id": 33, "setup": "No hay nada más permanente que una solución temporal que funciona.", "delivery": "" },
-  { "id": 34, "setup": "Un buen programador mira a ambos lados antes de cruzar una calle de sentido único.", "delivery": "Por si acaso hay un bug en el tráfico." },
-  { "id": 35, "setup": "En mi casa se hace lo que yo digo...", "delivery": "Después de leer la documentación, claro." },
-  { "id": 36, "setup": "Un programador no es alguien que sabe escribir código...", "delivery": "Es alguien que sabe qué copiar y pegar de Stack Overflow." },
-  { "id": 37, "setup": "Mi lenguaje de programación favorito es 'Copy-Paste'.", "delivery": "" },
-  { "id": 38, "setup": "¡Socorro! ¡Un programador me está persiguiendo!", "delivery": "¡Rápido, métete en una zona sin Wi-Fi!" },
-  { "id": 39, "setup": "Dios tardó 7 días en crear el mundo porque no tenía que hacerlo compatible con versiones anteriores.", "delivery": "" },
-  { "id": 40, "setup": "Si el código funciona, ¡no lo toques!", "delivery": "Aunque no sepas por qué funciona." }
+  {
+    "id": 1,
+    "setup": "¿Qué es un terapeuta?",
+    "delivery": "1024 Gigapeutas.",
+    "source": "https://v2.jokeapi.dev/joke/1?lang=es"
+  },
+  {
+    "id": 2,
+    "setup": "¿Qué le dice un .GIF a un .JPEG?",
+    "delivery": "Anímate viejo.",
+    "source": "https://v2.jokeapi.dev/joke/2?lang=es"
+  },
+  {
+    "id": 3,
+    "setup": "Un programador se va a dormir y pone dos vasos en la mesita. Uno lleno por si tiene sed...",
+    "delivery": "Y uno vacío por si no tiene.",
+    "source": "https://www.reddit.com/r/ProgrammerHumor/comments/11u0rx/you_all_have_probably_already_seen_these_but/"
+  },
+  {
+    "id": 4,
+    "setup": "Solo hay 10 tipos de personas en el mundo:",
+    "delivery": "Las que entienden binario y las que no.",
+    "source": "https://es.wikipedia.org/wiki/Humor_inform%C3%A1tico#Chistes_sobre_sistemas_de_numeraci%C3%B3n"
+  },
+  {
+    "id": 5,
+    "setup": "¿Qué es el hardware?",
+    "delivery": "La parte que puedes golpear cuando falla el software.",
+    "source": "https://v2.jokeapi.dev/joke/4?lang=es"
+  },
+  {
+    "id": 6,
+    "setup": "¿Por qué C consigue todas las chicas y Java no?",
+    "delivery": "Porque C no las trata como objetos.",
+    "source": "https://v2.jokeapi.dev/joke/6?lang=es"
+  },
+  {
+    "id": 7,
+    "setup": "Un SQL entra en un bar, se acerca a dos mesas y pregunta:",
+    "delivery": "¿Puedo unirme a vosotras? (Can I join you?)",
+    "source": "https://www.reddit.com/r/programming/comments/bpoub/a_sql_query_walks_into_a_bar_he_approaches_two/"
+  },
+  {
+    "id": 8,
+    "setup": "Para el optimista el vaso está medio lleno. Para el pesimista medio vacío.",
+    "delivery": "Para el ingeniero el vaso es el doble de grande de lo necesario.",
+    "source": "https://www.facebook.com/chistesparaingenieros/posts/667953336548385/"
+  },
+  {
+    "id": 9,
+    "setup": "Mi mujer me dijo: 'Ve al súper y trae una barra de pan. Si hay huevos, trae doce'.",
+    "delivery": "Volví con doce barras de pan.",
+    "source": "https://www.reddit.com/r/Jokes/comments/1966v7/a_programmer_is_going_to_the_grocery_store/"
+  },
+  {
+    "id": 10,
+    "setup": "Un hombre en un globo se pierde y pregunta a alguien en tierra dónde está...",
+    "delivery": "- Estás en un globo a 10m de altura. - ¿Eres informático? - Sí. - Me has dado una respuesta técnicamente correcta pero inútil.",
+    "source": "https://www.genbeta.com/desarrollo/validacion-en-cliente-o-en-servidor-la-pregunta-de-la-semana"
+  },
+  {
+    "id": 11,
+    "setup": "Make me a sandwich.",
+    "delivery": "Sudo make me a sandwich.",
+    "source": "https://xkcd.com/149/"
+  },
+  {
+    "id": 12,
+    "setup": "Debugging es como ser el detective en una película de crímenes...",
+    "delivery": "Donde tú también eres el asesino.",
+    "source": "https://x.com/fortes/status/399339918213652480"
+  },
+  {
+    "id": 13,
+    "setup": "¿Has escuchado sobre la manera orientada a objetos de ser adinerado?",
+    "delivery": "Herencia.",
+    "source": "https://x.com/iamdevloper/status/458607185011294208"
+  },
+  {
+    "id": 14,
+    "setup": "¿Cómo puedes mantener a un programador en la ducha todo un día?",
+    "delivery": "Entrégale un champú que diga: 'Enjabone, enjuague, repita'.",
+    "source": "https://x.com/CodeWisdom/status/1131139459384594432"
+  },
+  {
+    "id": 15,
+    "setup": "¿Cómo se dice 'pobre' en Java?",
+    "delivery": "NullPointerException.",
+    "source": "https://www.reddit.com/r/ProgrammerHumor/comments/4180m7/how_do_you_say_poor_in_java/"
+  },
+  {
+    "id": 16,
+    "setup": "Cuando un programador crea código por primera vez, solo él y Dios saben cómo funciona.",
+    "delivery": "Unos meses después, solo Dios lo sabe.",
+    "source": "https://es.quora.com/Es-normal-olvidar-c%C3%B3mo-funciona-tu-propio-c%C3%B3digo"
+  }
 ]
