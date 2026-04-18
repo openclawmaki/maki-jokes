@@ -55,12 +55,11 @@
         .joke-display {
             width: 100%;
             max-width: 1200px;
-            /* Ajuste dinámico de texto: grande pero flexible */
             font-size: clamp(2rem, 8vw, 5rem);
             font-weight: 400;
             line-height: 1.1;
             letter-spacing: -0.03em;
-            text-align: left;
+            text-align: center;
             word-wrap: break-word;
         }
         .delivery {
@@ -88,69 +87,11 @@
             color: #65676b;
             opacity: 0.6;
             font-weight: 400;
-            cursor: pointer;
             z-index: 20;
-        }
-        #log-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            z-index: 100;
-            display: none;
-            overflow-y: auto;
-            padding: 20px;
-            font-size: 0.75rem;
-            color: #000;
-            letter-spacing: -0.01em;
-        }
-        .log-entry {
-            padding: 8px 0;
-            line-height: 1.2;
-            border: none;
-            display: flex;
-            gap: 10px;
-        }
-        .log-index {
-            opacity: 0.2;
-            min-width: 20px;
-        }
-        .log-text {
-            opacity: 0.3;
-        }
-        .log-text.seen {
-            opacity: 1;
-        }
-        .log-close {
-            position: sticky;
-            top: 0;
-            background: #fff;
-            padding: 10px 0 20px 0;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            cursor: pointer;
-            font-size: 0.7rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .log-reset {
-            color: #d63031;
-            display: none;
         }
     </style>
 </head>
 <body>
-    <div id="log-overlay">
-        <div class="log-close">
-            <span onclick="toggleLog()">Cerrar</span>
-            <span id="reset-btn" class="log-reset" onclick="resetHistory()">Reset Historial</span>
-        </div>
-        <div id="log-content"></div>
-    </div>
     <header>
         <h1>Maki</h1>
     </header>
@@ -160,7 +101,7 @@
             <div id="delivery" class="delivery"></div>
         </div>
     </main>
-    <div class="counter" id="counter" onclick="toggleLog()">Vistos: 0 / 0</div>
+    <div class="counter" id="counter">Vistos 0%</div>
     <div class="timer-container">
         <div class="timer-progress" id="progress"></div>
     </div>
@@ -179,12 +120,9 @@
             try {
                 const response = await fetch(`${JOKE_FILE}?cb=${Date.now()}`);
                 const jokes = await response.json();
-                window.allJokes = jokes; // Guardar para el log
                 
-                // Filtramos los que no hayamos visto
                 let availableJokes = jokes.filter(j => !seenJokes.includes(j.id));
                 
-                // Si los hemos visto todos, reseteamos el historial local
                 if (availableJokes.length === 0) {
                     seenJokes = [];
                     availableJokes = jokes;
@@ -196,53 +134,13 @@
                 localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
                 
                 setupEl.innerText = data.setup;
-                deliveryEl.innerText = data.delivery || ''; // Si no hay delivery, queda vacío
+                deliveryEl.innerText = data.delivery || '';
                 
                 const progressTotal = Math.round((seenJokes.length / jokes.length) * 100);
                 document.getElementById('counter').innerText = `Vistos ${progressTotal}%`;
             } catch (error) {
                 setupEl.innerText = "Error al cargar chistes locales.";
                 deliveryEl.innerText = "";
-            }
-        }
-
-        function toggleLog() {
-            const overlay = document.getElementById('log-overlay');
-            const content = document.getElementById('log-content');
-            const resetBtn = document.getElementById('reset-btn');
-            
-            if (overlay.style.display === 'block') {
-                overlay.style.display = 'none';
-            } else {
-                content.innerHTML = '';
-                // Filtramos para mostrar solo los vistos
-                const seenJokesData = window.allJokes.filter(j => seenJokes.includes(j.id));
-                
-                // Mostrar botón de reset si se ha visto más del 80%
-                const progress = seenJokes.length / window.allJokes.length;
-                resetBtn.style.display = progress >= 0.8 ? 'inline' : 'none';
-
-                seenJokesData.forEach((j, i) => {
-                    const div = document.createElement('div');
-                    div.className = 'log-entry';
-                    div.innerHTML = `
-                        <span class="log-index">${String(i + 1).padStart(2, '0')}</span>
-                        <span class="log-text seen">
-                            ${j.setup} ${j.delivery ? ' — ' + j.delivery : ''}
-                        </span>
-                    `;
-                    content.appendChild(div);
-                });
-                overlay.style.display = 'block';
-            }
-        }
-
-        function resetHistory() {
-            if (confirm('¿Quieres resetear el historial de chistes vistos?')) {
-                seenJokes = [];
-                localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
-                toggleLog();
-                fetchJoke();
             }
         }
 
