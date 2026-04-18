@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: #ffeaa7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 5px solid #fab1a0;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 10px 10px 0px #fdcb6e;
+}
+
+h1 {
+  color: #d63031;
+  margin-top: 0;
+}
+
+.joke-setup {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #2d3436;
+}
+
+.joke-delivery {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #0984e3;
+}
+
+button {
+  background: #55efc4;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border-bottom: 4px solid #00b894;
+  transition: all 0.1s;
+}
+
+button:active {
+  border-bottom: none;
+  transform: translateY(4px);
+}

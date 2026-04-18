@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang='es'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Maki Jokes 🍣</title>
-    <style>
-        body { font-family: 'Comic Sans MS', cursive; background: #ffeaa7; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .box { background: white; padding: 30px; border-radius: 20px; border: 5px solid #fab1a0; text-align: center; max-width: 400px; box-shadow: 10px 10px 0px #fdcb6e; }
-        h1 { color: #d63031; }
-        .joke { font-size: 1.5rem; margin: 20px 0; color: #2d3436; }
-        button { background: #55efc4; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 10px; cursor: pointer; border-bottom: 4px solid #00b894; }
-        button:active { border-bottom: none; transform: translateY(4px); }
-    </style>
-</head>
-<body>
-    <div class='box'>
-        <h1>Maki Jokes 🍣</h1>
-        <p class='joke'>¿Por qué el sushi nunca se pelea?</p>
-        <p class='joke' style='color: #0984e3;'>¡Porque siempre va en paz (en pez)! 🐟</p>
-        <button onclick='alert("¡Próximamente más chistes de arroz!")'>¡Otro!</button>
-    </div>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
