@@ -105,20 +105,22 @@
             const setupEl = document.getElementById('setup');
             const deliveryEl = document.getElementById('delivery');
             
-            resetTimer();
+            if (timerInterval) cancelAnimationFrame(timerInterval);
             
             try {
                 let data;
                 let attempts = 0;
-                while (attempts < 5) {
-                    const response = await fetch(JOKE_API);
+                // Aumentamos a 15 intentos para encontrar uno nuevo
+                while (attempts < 15) {
+                    const response = await fetch(`${JOKE_API}&cb=${Date.now()}`);
                     data = await response.json();
                     if (!seenJokes.includes(data.id)) break;
                     attempts++;
                 }
 
+                // Si después de 15 intentos sigue repetido, lo mostramos igual pero registramos
                 seenJokes.push(data.id);
-                if (seenJokes.length > 50) seenJokes.shift();
+                if (seenJokes.length > 100) seenJokes.shift(); // Ampliamos memoria a 100
                 localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
                 
                 if (data.type === 'single') {
