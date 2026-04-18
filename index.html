@@ -80,6 +80,15 @@
             background: var(--accent-color);
             width: 0%;
         }
+        .counter {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 0.8rem;
+            color: #65676b;
+            opacity: 0.6;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
@@ -92,6 +101,7 @@
             <div id="delivery" class="delivery"></div>
         </div>
     </main>
+    <div class="counter" id="counter">Vistos: 0 / 0</div>
     <div class="timer-container">
         <div class="timer-progress" id="progress"></div>
     </div>
@@ -128,6 +138,7 @@
                 setupEl.innerText = data.setup;
                 deliveryEl.innerText = data.delivery || ''; // Si no hay delivery, queda vacío
                 
+                document.getElementById('counter').innerText = `Vistos: ${seenJokes.length} / ${jokes.length}`;
             } catch (error) {
                 setupEl.innerText = "Error al cargar chistes locales.";
                 deliveryEl.innerText = "";
