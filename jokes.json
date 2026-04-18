@@ -1,5 +1,65 @@
 [
   {
+    "id": 101,
+    "setup": "Jaimito, ¿cómo se dice en inglés: 'El gato se cayó al agua y se ahogó'?",
+    "delivery": "- Fácil profe: The cat splash and gluglu.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 102,
+    "setup": "Mamá, mamá, ¿las peras son transparentes?",
+    "delivery": "- No, hijo. - ¡Ah! Pues entonces me he comido una bombilla.",
+    "source": "https://www.elhuevodechocolate.com/chistes4.htm"
+  },
+  {
+    "id": 103,
+    "setup": "¿Qué hace un perro con un taladro?",
+    "delivery": "Ta-ladrando.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 104,
+    "setup": "Papá, ¿qué se siente al tener un hijo tan guapo?",
+    "delivery": "- No sé hijo, pregúntale a tu abuelo.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 105,
+    "setup": "¿Qué le dice un techo a otro?",
+    "delivery": "Te-echo de menos.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 106,
+    "setup": "¿Cuál es el colmo de un jardinero?",
+    "delivery": "Que lo dejen plantado.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 107,
+    "setup": "Un niño le dice a su padre: - Papá, papá, ¡tírame la pelota!",
+    "delivery": "Y el padre le dice: - ¡No, hijo, que te voy a desinflar!",
+    "source": "https://www.elhuevodechocolate.com/chistes4.htm"
+  },
+  {
+    "id": 108,
+    "setup": "Doctor, doctor, ¡tengo un hueso fuera!",
+    "delivery": "- ¡Pues dígale que pase!",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 109,
+    "setup": "¿Qué le dice un pez a otro?",
+    "delivery": "Nada.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
+    "id": 110,
+    "setup": "¿Cuál es el colmo de un electricista?",
+    "delivery": "Que su mujer se llame Luz y sus hijos le den corrientes.",
+    "source": "https://www.guiainfantil.com/articulos/ocio/chistes/chistes-divertidos-de-jaimito-parta-ninos/"
+  },
+  {
     "id": 1,
     "setup": "¿Qué es un terapeuta?",
     "delivery": "1024 Gigapeutas.",
@@ -105,7 +165,7 @@
     "id": 18,
     "setup": "¿Por qué los programadores no tienen novia?",
     "delivery": "Porque les da miedo el compromiso (commit).",
-    "source": "https://raw.githubusercontent.com/15Dkatz/official_joke_api/master/jokes/index.json"
+    "source": "https://github.com/15Dkatz/official_joke_api"
   },
   {
     "id": 19,
