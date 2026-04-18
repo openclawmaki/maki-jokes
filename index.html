@@ -3,66 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maki Jokes 🍣</title>
+    <title>Maki 🍣</title>
     <style>
         body {
-            font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: #ffeaa7;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            color: #1c1e21;
         }
-        .box {
+        .container {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            border: 5px solid #fab1a0;
+            padding: 40px;
+            border-radius: 12px;
             text-align: center;
-            max-width: 400px;
-            box-shadow: 10px 10px 0px #fdcb6e;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
-        h1 { color: #d63031; margin-top: 0; }
-        .joke-setup { font-size: 1.5rem; margin: 20px 0; color: #2d3436; }
-        .joke-delivery { font-size: 1.5rem; margin: 20px 0; color: #0984e3; }
-        button {
-            background: #55efc4;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            cursor: pointer;
-            border-bottom: 4px solid #00b894;
+        h1 { color: #863bff; margin-top: 0; font-size: 2.5rem; }
+        .joke-text { font-size: 1.4rem; line-height: 1.6; margin: 30px 0; min-height: 100px; }
+        .author { font-style: italic; color: #65676b; margin-top: -20px; margin-bottom: 20px; font-size: 0.9rem; }
+        .timer-bar {
+            height: 4px;
+            background: #e4e6eb;
+            width: 100%;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 20px;
         }
-        button:active { border-bottom: none; transform: translateY(4px); }
+        .timer-progress {
+            height: 100%;
+            background: #863bff;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Maki Jokes 🍣</h1>
-        <div id="joke-container">
-            <p class="joke-setup" id="setup">Cargando chiste...</p>
-            <p class="joke-delivery" id="delivery"></p>
+    <div class="container">
+        <h1>Maki 🍣</h1>
+        <div id="joke-content">
+            <p class="joke-text" id="joke">Cargando...</p>
+            <p class="author" id="author"></p>
         </div>
-        <button onclick="nextJoke()">¡Otro!</button>
+        <div class="timer-bar">
+            <div class="timer-progress" id="progress"></div>
+        </div>
     </div>
 
     <script>
-        const JOKES = [
-            { setup: '¿Por qué el sushi nunca se pelea?', delivery: '¡Porque siempre va en paz (en pez)! 🐟' },
-            { setup: '¿Qué le dice un nigiri a otro?', delivery: '¡Qué "arroz" tan bonito tienes! 🍣' },
-            { setup: '¿Cómo se despiden los sushis?', delivery: '¡Sayonara, baby-arroz! 🍱' },
-            { setup: '¿Cuál es el sushi favorito de los músicos?', delivery: 'El Rock and Roll. 🎸' },
-            { setup: '¿Qué hace un sushi en el gimnasio?', delivery: '¡Musul-maki! 💪' }
-        ];
-        let index = 0;
-        function nextJoke() {
-            index = (index + 1) % JOKES.length;
-            document.getElementById('setup').innerText = JOKES[index].setup;
-            document.getElementById('delivery').innerText = JOKES[index].delivery;
+        let timeLeft = 15;
+        let timerInterval;
+        const JOKE_API = 'https://v2.jokeapi.dev/joke/Any?lang=es&safe-mode';
+
+        async function fetchJoke() {
+            const jokeElement = document.getElementById('joke');
+            const authorElement = document.getElementById('author');
+            const progressElement = document.getElementById('progress');
+            
+            resetTimer();
+            
+            try {
+                const response = await fetch(JOKE_API);
+                const data = await response.json();
+                
+                if (data.type === 'single') {
+                    jokeElement.innerText = data.joke;
+                } else {
+                    jokeElement.innerText = `${data.setup}\n\n${data.delivery}`;
+                }
+                
+                // JokeAPI no suele dar autor, pero dejamos el campo preparado por si cambiamos de API
+                authorElement.innerText = data.source || ''; 
+                
+            } catch (error) {
+                jokeElement.innerText = "Vaya, se me ha olvidado el chiste... prueba a recargar.";
+                console.error(error);
+            }
         }
-        nextJoke();
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timeLeft = 15;
+            const progressElement = document.getElementById('progress');
+            
+            let start = null;
+            const duration = 15000;
+
+            function step(timestamp) {
+                if (!start) start = timestamp;
+                const progress = timestamp - start;
+                const percentage = Math.min((progress / duration) * 100, 100);
+                progressElement.style.width = percentage + '%';
+
+                if (progress < duration) {
+                    timerInterval = requestAnimationFrame(step);
+                } else {
+                    fetchJoke();
+                }
+            }
+            timerInterval = requestAnimationFrame(step);
+        }
+
+        // Carga inicial
+        fetchJoke();
     </script>
 </body>
 </html>
