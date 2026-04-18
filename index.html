@@ -133,12 +133,22 @@
             letter-spacing: 0.05em;
             cursor: pointer;
             font-size: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .log-reset {
+            color: #d63031;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div id="log-overlay">
-        <div class="log-close" onclick="toggleLog()">Cerrar</div>
+        <div class="log-close">
+            <span onclick="toggleLog()">Cerrar</span>
+            <span id="reset-btn" class="log-reset" onclick="resetHistory()">Reset Historial</span>
+        </div>
         <div id="log-content"></div>
     </div>
     <header>
@@ -198,6 +208,7 @@
         function toggleLog() {
             const overlay = document.getElementById('log-overlay');
             const content = document.getElementById('log-content');
+            const resetBtn = document.getElementById('reset-btn');
             
             if (overlay.style.display === 'block') {
                 overlay.style.display = 'none';
@@ -206,6 +217,10 @@
                 // Filtramos para mostrar solo los vistos
                 const seenJokesData = window.allJokes.filter(j => seenJokes.includes(j.id));
                 
+                // Mostrar botón de reset si se ha visto más del 80%
+                const progress = seenJokes.length / window.allJokes.length;
+                resetBtn.style.display = progress >= 0.8 ? 'inline' : 'none';
+
                 seenJokesData.forEach((j, i) => {
                     const div = document.createElement('div');
                     div.className = 'log-entry';
@@ -218,6 +233,15 @@
                     content.appendChild(div);
                 });
                 overlay.style.display = 'block';
+            }
+        }
+
+        function resetHistory() {
+            if (confirm('¿Quieres resetear el historial de chistes vistos?')) {
+                seenJokes = [];
+                localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
+                toggleLog();
+                fetchJoke();
             }
         }
 
