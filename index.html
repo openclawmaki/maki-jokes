@@ -203,13 +203,15 @@
                 overlay.style.display = 'none';
             } else {
                 content.innerHTML = '';
-                window.allJokes.forEach((j, i) => {
-                    const isSeen = seenJokes.includes(j.id);
+                // Filtramos para mostrar solo los vistos
+                const seenJokesData = window.allJokes.filter(j => seenJokes.includes(j.id));
+                
+                seenJokesData.forEach((j, i) => {
                     const div = document.createElement('div');
                     div.className = 'log-entry';
                     div.innerHTML = `
                         <span class="log-index">${String(i + 1).padStart(2, '0')}</span>
-                        <span class="log-text ${isSeen ? 'seen' : ''}">
+                        <span class="log-text seen">
                             ${j.setup} ${j.delivery ? ' — ' + j.delivery : ''}
                         </span>
                     `;
