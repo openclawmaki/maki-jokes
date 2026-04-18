@@ -97,7 +97,7 @@
     </div>
 
     <script>
-        const JOKE_API = 'https://v2.jokeapi.dev/joke/Any';
+        const JOKE_FILE = 'jokes.json';
         let seenJokes = JSON.parse(localStorage.getItem('seenJokes')) || [];
         let timerInterval;
 
@@ -108,28 +108,28 @@
             if (timerInterval) cancelAnimationFrame(timerInterval);
             
             try {
-                let data;
-                // Pedimos 10 chistes de cualquier idioma sin filtros
-                const response = await fetch(`${JOKE_API}?amount=10&cb=${Date.now()}`);
-                const result = await response.json();
+                const response = await fetch(`${JOKE_FILE}?cb=${Date.now()}`);
+                const jokes = await response.json();
                 
-                const jokes = result.jokes || [result];
-                data = jokes.find(j => !seenJokes.includes(j.id)) || jokes[0];
+                // Filtramos los que no hayamos visto
+                let availableJokes = jokes.filter(j => !seenJokes.includes(j.id));
+                
+                // Si los hemos visto todos, reseteamos el historial local
+                if (availableJokes.length === 0) {
+                    seenJokes = [];
+                    availableJokes = jokes;
+                }
+
+                const data = availableJokes[Math.floor(Math.random() * availableJokes.length)];
 
                 seenJokes.push(data.id);
-                if (seenJokes.length > 200) seenJokes.shift();
                 localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
                 
-                if (data.type === 'single') {
-                    setupEl.innerText = data.joke;
-                    deliveryEl.innerText = '';
-                } else {
-                    setupEl.innerText = data.setup;
-                    deliveryEl.innerText = data.delivery;
-                }
+                setupEl.innerText = data.setup;
+                deliveryEl.innerText = data.delivery;
                 
             } catch (error) {
-                setupEl.innerText = "Error al cargar.";
+                setupEl.innerText = "Error al cargar chistes locales.";
                 deliveryEl.innerText = "";
             }
         }

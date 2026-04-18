@@ -1,0 +1,22 @@
+[
+  { "id": 1, "setup": "¿Qué es un terapeuta?", "delivery": "1024 Gigapeutas." },
+  { "id": 2, "setup": "¿Por qué los programadores confunden Halloween con Navidad?", "delivery": "Porque Oct 31 == Dec 25." },
+  { "id": 3, "setup": "Un programador se va a dormir y pone dos vasos en la mesita.", "delivery": "Uno lleno por si tiene sed, y uno vacío por si no tiene." },
+  { "id": 4, "setup": "¿Qué le dice un .GIF a un .JPEG?", "delivery": "Anímate viejo." },
+  { "id": 5, "setup": "¿Cuál es la diferencia entre un programador y un político?", "delivery": "Al programador le pagan por los bugs que corrige." },
+  { "id": 6, "setup": "¿Por qué C consigue todas las chicas y Java no?", "delivery": "Porque C no las trata como objetos." },
+  { "id": 7, "setup": "Solo hay 10 tipos de personas en el mundo:", "delivery": "Las que entienden binario y las que no." },
+  { "id": 8, "setup": "He intentado aprender SQL...", "delivery": "Pero no he podido hacer un JOIN con la realidad." },
+  { "id": 9, "setup": "¿Cómo llamas a un programador que no tiene bugs?", "delivery": "Un mentiroso." },
+  { "id": 10, "setup": "Mi mujer me dijo: 'Ve al súper y trae una barra de pan. Si hay huevos, trae doce'.", "delivery": "Volví con doce barras de pan." },
+  { "id": 11, "setup": "¿Qué es el hardware?", "delivery": "La parte que puedes golpear cuando falla el software." },
+  { "id": 12, "setup": "¿Cuál es el lenguaje de programación favorito de los piratas?", "delivery": "El RRRRRRR." },
+  { "id": 13, "setup": "Para entender lo que es la recursividad...", "delivery": "Primero debes entender lo que es la recursividad." },
+  { "id": 14, "setup": "Un SQL entra en un bar, se acerca a dos mesas y pregunta:", "delivery": "¿Puedo unirme a vosotras? (Can I join you?)" },
+  { "id": 15, "setup": "¿Por qué los programadores odian la naturaleza?", "delivery": "Porque tiene demasiados bugs." },
+  { "id": 16, "setup": "Un optimista dice: 'El vaso está medio lleno'. Un pesimista dice: 'El vaso está medio vacío'.", "delivery": "Un programador dice: 'El vaso es el doble de grande de lo necesario'." },
+  { "id": 17, "setup": "¿Qué hace un programador cuando tiene hambre?", "delivery": "Se va a la cocina y hace un 'sudo make sandwich'." },
+  { "id": 18, "setup": "¿Por qué el programador se quedó en la ducha para siempre?", "delivery": "Porque las instrucciones del champú decían: 'Lavar, aclarar, repetir'." },
+  { "id": 19, "setup": "¿Cómo se dice 'pobre' en Java?", "delivery": "NullPointerException." },
+  { "id": 20, "setup": "Frontend es como el maquillaje...", "delivery": "Sirve para ocultar que el Backend está hecho un desastre." }
+]
