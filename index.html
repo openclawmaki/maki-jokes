@@ -198,7 +198,8 @@
                 setupEl.innerText = data.setup;
                 deliveryEl.innerText = data.delivery || ''; // Si no hay delivery, queda vacío
                 
-                document.getElementById('counter').innerText = `Vistos: ${seenJokes.length} / ${jokes.length}`;
+                const progressTotal = Math.round((seenJokes.length / jokes.length) * 100);
+                document.getElementById('counter').innerText = `Vistos ${progressTotal}%`;
             } catch (error) {
                 setupEl.innerText = "Error al cargar chistes locales.";
                 deliveryEl.innerText = "";
