@@ -2,75 +2,114 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maki 🍣</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Maki</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #863bff;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f2f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            color: #1c1e21;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            text-align: center;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        h1 { color: #863bff; margin-top: 0; font-size: 2.5rem; }
-        .joke-text { font-size: 1.4rem; line-height: 1.6; margin: 30px 0; min-height: 100px; }
-        .author { font-style: italic; color: #65676b; margin-top: -20px; margin-bottom: 20px; font-size: 0.9rem; }
-        .timer-bar {
-            height: 4px;
-            background: #e4e6eb;
-            width: 100%;
-            border-radius: 2px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            height: 100dvh;
             overflow: hidden;
-            margin-top: 20px;
+        }
+        header {
+            padding: 20px 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+        h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            opacity: 0.3;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            width: 100%;
+        }
+        .joke-display {
+            width: 100%;
+            max-width: 1200px;
+            /* Ajuste dinámico de texto: grande pero flexible */
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            text-align: left;
+            word-wrap: break-word;
+        }
+        .delivery {
+            font-weight: 700;
+            margin-top: 0.5em;
+            color: var(--accent-color);
+        }
+        .timer-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
         }
         .timer-progress {
             height: 100%;
-            background: #863bff;
+            background: var(--accent-color);
             width: 0%;
-            transition: width 0.1s linear;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Maki 🍣</h1>
-        <div id="joke-content">
-            <p class="joke-text" id="joke">Cargando...</p>
-            <p class="author" id="author"></p>
+    <header>
+        <h1>Maki</h1>
+    </header>
+    <main>
+        <div class="joke-display" id="joke-container">
+            <div id="setup">Cargando...</div>
+            <div id="delivery" class="delivery"></div>
         </div>
-        <div class="timer-bar">
-            <div class="timer-progress" id="progress"></div>
-        </div>
+    </main>
+    <div class="timer-container">
+        <div class="timer-progress" id="progress"></div>
     </div>
 
     <script>
-        let timeLeft = 10;
-        let timerInterval;
         const JOKE_API = 'https://v2.jokeapi.dev/joke/Any?lang=es&safe-mode';
         let seenJokes = JSON.parse(localStorage.getItem('seenJokes')) || [];
+        let timerInterval;
 
         async function fetchJoke() {
-            const jokeElement = document.getElementById('joke');
-            const authorElement = document.getElementById('author');
+            const setupEl = document.getElementById('setup');
+            const deliveryEl = document.getElementById('delivery');
             
             resetTimer();
             
             try {
                 let data;
                 let attempts = 0;
-                // Intentamos hasta 5 veces traer uno que no hayamos visto
                 while (attempts < 5) {
                     const response = await fetch(JOKE_API);
                     data = await response.json();
@@ -78,38 +117,36 @@
                     attempts++;
                 }
 
-                // Guardamos el ID para no repetirlo
                 seenJokes.push(data.id);
-                if (seenJokes.length > 50) seenJokes.shift(); // Mantenemos los últimos 50
+                if (seenJokes.length > 50) seenJokes.shift();
                 localStorage.setItem('seenJokes', JSON.stringify(seenJokes));
                 
                 if (data.type === 'single') {
-                    jokeElement.innerText = data.joke;
+                    setupEl.innerText = data.joke;
+                    deliveryEl.innerText = '';
                 } else {
-                    jokeElement.innerText = `${data.setup}\n\n${data.delivery}`;
+                    setupEl.innerText = data.setup;
+                    deliveryEl.innerText = data.delivery;
                 }
                 
-                authorElement.innerText = data.source || ''; 
-                
             } catch (error) {
-                jokeElement.innerText = "Vaya, se me ha olvidado el chiste... prueba a recargar.";
-                console.error(error);
+                setupEl.innerText = "Error al cargar.";
+                deliveryEl.innerText = "";
             }
         }
 
         function resetTimer() {
-            clearInterval(timerInterval);
-            timeLeft = 10;
-            const progressElement = document.getElementById('progress');
-            
+            const progressEl = document.getElementById('progress');
             let start = null;
             const duration = 10000;
+
+            if (timerInterval) cancelAnimationFrame(timerInterval);
 
             function step(timestamp) {
                 if (!start) start = timestamp;
                 const progress = timestamp - start;
                 const percentage = Math.min((progress / duration) * 100, 100);
-                progressElement.style.width = percentage + '%';
+                progressEl.style.width = percentage + '%';
 
                 if (progress < duration) {
                     timerInterval = requestAnimationFrame(step);
@@ -120,7 +157,6 @@
             timerInterval = requestAnimationFrame(step);
         }
 
-        // Carga inicial
         fetchJoke();
     </script>
 </body>
