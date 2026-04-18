@@ -18,5 +18,15 @@
   { "id": 17, "setup": "¿Qué hace un programador cuando tiene hambre?", "delivery": "Se va a la cocina y hace un 'sudo make sandwich'." },
   { "id": 18, "setup": "¿Por qué el programador se quedó en la ducha para siempre?", "delivery": "Porque las instrucciones del champú decían: 'Lavar, aclarar, repetir'." },
   { "id": 19, "setup": "¿Cómo se dice 'pobre' en Java?", "delivery": "NullPointerException." },
-  { "id": 20, "setup": "Frontend es como el maquillaje...", "delivery": "Sirve para ocultar que el Backend está hecho un desastre." }
+  { "id": 20, "setup": "Frontend es como el maquillaje...", "delivery": "Sirve para ocultar que el Backend está hecho un desastre." },
+  { "id": 21, "setup": "¿Qué hace un desarrollador cuando se queda sin café?", "delivery": "¡Entra en modo pánico y empieza a comentar el código!" },
+  { "id": 22, "setup": "Un programador en la playa...", "delivery": "¡No se quema, se renderiza!" },
+  { "id": 23, "setup": "¿Qué es una variable?", "delivery": "Un lugar donde guardas algo y luego rezas para que siga ahí." },
+  { "id": 24, "setup": "¿Por qué los programadores no les gusta el sol?", "delivery": "Porque no pueden ver los errores en la pantalla." },
+  { "id": 25, "setup": "Debugging es como ser el detective en una película de crímenes...", "delivery": "Donde tú también eres el asesino." },
+  { "id": 26, "setup": "¿Qué es un programador?", "delivery": "Una máquina que convierte cafeína en código." },
+  { "id": 27, "setup": "Mi software no tiene bugs...", "delivery": "Solo funciones que se comportan de forma inesperada." },
+  { "id": 28, "setup": "¿Por qué el programador se siente solo?", "delivery": "Porque no tiene a nadie a quien hacerle un 'merge'." },
+  { "id": 29, "setup": "¿Qué le dice un servidor a otro?", "delivery": "¿Quieres que te haga un PING o prefieres que te mande un paquete?" },
+  { "id": 30, "setup": "Internet Explorer entra en un bar...", "delivery": "Y pide una cerveza que el barman ya le sirvió hace tres años." }
 ]
